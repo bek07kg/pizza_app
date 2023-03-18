@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_app/constants/app_colors.dart';
+import 'package:pizza_app/pages/home_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -9,6 +10,22 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  bool active = false;
+  String? name;
+  String? email;
+  String? password;
+
+  void chekc() {
+    if (name != null && email != null && password != null) {
+      if (name!.isEmpty || email!.isEmpty || password!.isEmpty) {
+        active = false;
+      } else {
+        active = true;
+      }
+      setState(() {});
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +50,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: AppColors.black,
                   fontWeight: FontWeight.w600,
                 ),
+                onChanged: (String? value) {
+                  name = value;
+                  chekc();
+                },
                 decoration: InputDecoration(
                   hintText: "Имя",
                   focusColor: AppColors.white,
@@ -52,6 +73,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: AppColors.black,
                   fontWeight: FontWeight.w600,
                 ),
+                onChanged: (String? value) {
+                  email = value;
+                  chekc();
+                },
                 decoration: InputDecoration(
                   hintText: "Эл.почта",
                   focusColor: AppColors.white,
@@ -71,6 +96,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: AppColors.black,
                   fontWeight: FontWeight.w600,
                 ),
+                onChanged: (String? value) {
+                  password = value;
+                  chekc();
+                },
                 decoration: InputDecoration(
                   hintText: "Пароль",
                   focusColor: AppColors.white,
@@ -95,7 +124,14 @@ class _RegisterPageState extends State<RegisterPage> {
                     vertical: 20,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: active
+                    ? () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      }
+                    : null,
                 child: Text(
                   "Регистрация",
                   style: TextStyle(
