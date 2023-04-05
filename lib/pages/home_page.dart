@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(height: 30),
             ProfilSearchButton(),
-            SizedBox(height: 30),
+            SizedBox(height: 5),
             Text1(),
           ],
         ),

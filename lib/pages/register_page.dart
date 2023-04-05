@@ -39,7 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Text(
                 "Регистрация",
                 style: TextStyle(
-                  color: AppColors.black,
+                  color: AppColors.mainBlue,
                   fontSize: 40,
                 ),
               ),
@@ -91,6 +91,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               SizedBox(height: 30),
               TextFormField(
+                obscureText: true,
                 style: TextStyle(
                   fontSize: 20,
                   color: AppColors.black,
