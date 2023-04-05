@@ -40,6 +40,7 @@ class ProfilSearchButton extends StatelessWidget {
               child: Icon(
                 Icons.search,
                 color: AppColors.white,
+                size: 30,
               ),
             ),
           ),

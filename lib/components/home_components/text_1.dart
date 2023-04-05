@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pizza_app/constants/app_text_styles.dart';
 
 import '../../constants/app_colors.dart';
 
@@ -15,18 +16,12 @@ class Text1 extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            "Все",
-            style: TextStyle(
-              fontSize: 30,
-              color: AppColors.white,
-            ),
+            "Популярные",
+            style: AppTextStyles.style1,
           ),
           Text(
             ":",
-            style: TextStyle(
-              fontSize: 30,
-              color: AppColors.white,
-            ),
+            style: AppTextStyles.style1,
           ),
         ],
       ),
